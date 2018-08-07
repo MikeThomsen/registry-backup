@@ -5,7 +5,34 @@
   "content" : {
     "comments" : "",
     "componentType" : "PROCESS_GROUP",
-    "connections" : [ ],
+    "connections" : [ {
+      "backPressureDataSizeThreshold" : "1 GB",
+      "backPressureObjectThreshold" : 10000,
+      "bends" : [ ],
+      "componentType" : "CONNECTION",
+      "destination" : {
+        "comments" : "",
+        "groupId" : "14853177-0165-1000-d675-4e46d0f37955",
+        "id" : "70d3296a-24f6-3a01-a82d-6d0778531056",
+        "name" : "LogAttribute",
+        "type" : "PROCESSOR"
+      },
+      "flowFileExpiration" : "0 sec",
+      "groupIdentifier" : "74bd3dec-e50b-357c-8bc6-476d249024ed",
+      "identifier" : "a645feba-faf2-315d-be13-81b2812873c0",
+      "labelIndex" : 1,
+      "name" : "",
+      "prioritizers" : [ ],
+      "selectedRelationships" : [ "success" ],
+      "source" : {
+        "comments" : "",
+        "groupId" : "14853177-0165-1000-d675-4e46d0f37955",
+        "id" : "a3832d98-a2fa-3a23-b3f3-9ee7800ff4a6",
+        "name" : "GetMongo",
+        "type" : "PROCESSOR"
+      },
+      "zIndex" : 0
+    } ],
     "controllerServices" : [ ],
     "funnels" : [ ],
     "identifier" : "74bd3dec-e50b-357c-8bc6-476d249024ed",
@@ -18,7 +45,217 @@
       "y" : 160.0
     },
     "processGroups" : [ ],
-    "processors" : [ ],
+    "processors" : [ {
+      "autoTerminatedRelationships" : [ "original", "failure" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-mongodb-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.7.1"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "74bd3dec-e50b-357c-8bc6-476d249024ed",
+      "identifier" : "a3832d98-a2fa-3a23-b3f3-9ee7800ff4a6",
+      "name" : "GetMongo",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 250.5,
+        "y" : 8.5
+      },
+      "properties" : {
+        "mongo-charset" : "UTF-8",
+        "ssl-context-service" : "7c9bc005-892c-3fd4-e836-cfe8ba06125b",
+        "ssl-client-auth" : "REQUIRED",
+        "json-type" : "Extended",
+        "Mongo Database Name" : "mystuff",
+        "Mongo URI" : "mongodb://mongos:27017",
+        "Mongo Collection Name" : "events",
+        "use-pretty-printing" : "true"
+      },
+      "propertyDescriptors" : {
+        "mongo-charset" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "mongo-charset",
+          "sensitive" : false
+        },
+        "ssl-context-service" : {
+          "displayName" : "SSL Context Service",
+          "identifiesControllerService" : true,
+          "name" : "ssl-context-service",
+          "sensitive" : false
+        },
+        "Query" : {
+          "displayName" : "Query",
+          "identifiesControllerService" : false,
+          "name" : "Query",
+          "sensitive" : false
+        },
+        "ssl-client-auth" : {
+          "displayName" : "Client Auth",
+          "identifiesControllerService" : false,
+          "name" : "ssl-client-auth",
+          "sensitive" : false
+        },
+        "json-type" : {
+          "displayName" : "JSON Type",
+          "identifiesControllerService" : false,
+          "name" : "json-type",
+          "sensitive" : false
+        },
+        "Projection" : {
+          "displayName" : "Projection",
+          "identifiesControllerService" : false,
+          "name" : "Projection",
+          "sensitive" : false
+        },
+        "Mongo Database Name" : {
+          "displayName" : "Mongo Database Name",
+          "identifiesControllerService" : false,
+          "name" : "Mongo Database Name",
+          "sensitive" : false
+        },
+        "mongo-query-attribute" : {
+          "displayName" : "Query Output Attribute",
+          "identifiesControllerService" : false,
+          "name" : "mongo-query-attribute",
+          "sensitive" : false
+        },
+        "results-per-flowfile" : {
+          "displayName" : "Results Per FlowFile",
+          "identifiesControllerService" : false,
+          "name" : "results-per-flowfile",
+          "sensitive" : false
+        },
+        "Mongo URI" : {
+          "displayName" : "Mongo URI",
+          "identifiesControllerService" : false,
+          "name" : "Mongo URI",
+          "sensitive" : false
+        },
+        "Batch Size" : {
+          "displayName" : "Batch Size",
+          "identifiesControllerService" : false,
+          "name" : "Batch Size",
+          "sensitive" : false
+        },
+        "Mongo Collection Name" : {
+          "displayName" : "Mongo Collection Name",
+          "identifiesControllerService" : false,
+          "name" : "Mongo Collection Name",
+          "sensitive" : false
+        },
+        "Sort" : {
+          "displayName" : "Sort",
+          "identifiesControllerService" : false,
+          "name" : "Sort",
+          "sensitive" : false
+        },
+        "use-pretty-printing" : {
+          "displayName" : "Pretty Print Results JSON",
+          "identifiesControllerService" : false,
+          "name" : "use-pretty-printing",
+          "sensitive" : false
+        },
+        "Limit" : {
+          "displayName" : "Limit",
+          "identifiesControllerService" : false,
+          "name" : "Limit",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "15 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.mongodb.GetMongo",
+      "yieldDuration" : "1 sec"
+    }, {
+      "autoTerminatedRelationships" : [ "success" ],
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-standard-nar",
+        "group" : "org.apache.nifi",
+        "version" : "1.7.1"
+      },
+      "comments" : "",
+      "componentType" : "PROCESSOR",
+      "concurrentlySchedulableTaskCount" : 1,
+      "executionNode" : "ALL",
+      "groupIdentifier" : "74bd3dec-e50b-357c-8bc6-476d249024ed",
+      "identifier" : "70d3296a-24f6-3a01-a82d-6d0778531056",
+      "name" : "LogAttribute",
+      "penaltyDuration" : "30 sec",
+      "position" : {
+        "x" : 947.5,
+        "y" : 334.5
+      },
+      "properties" : {
+        "character-set" : "UTF-8",
+        "Log Level" : "info",
+        "attributes-to-log-regex" : ".*",
+        "Log Payload" : "false"
+      },
+      "propertyDescriptors" : {
+        "Log prefix" : {
+          "displayName" : "Log prefix",
+          "identifiesControllerService" : false,
+          "name" : "Log prefix",
+          "sensitive" : false
+        },
+        "character-set" : {
+          "displayName" : "Character Set",
+          "identifiesControllerService" : false,
+          "name" : "character-set",
+          "sensitive" : false
+        },
+        "Log Level" : {
+          "displayName" : "Log Level",
+          "identifiesControllerService" : false,
+          "name" : "Log Level",
+          "sensitive" : false
+        },
+        "attributes-to-ignore-regex" : {
+          "displayName" : "Attributes to Ignore by Regular Expression",
+          "identifiesControllerService" : false,
+          "name" : "attributes-to-ignore-regex",
+          "sensitive" : false
+        },
+        "Attributes to Ignore" : {
+          "displayName" : "Attributes to Ignore",
+          "identifiesControllerService" : false,
+          "name" : "Attributes to Ignore",
+          "sensitive" : false
+        },
+        "Attributes to Log" : {
+          "displayName" : "Attributes to Log",
+          "identifiesControllerService" : false,
+          "name" : "Attributes to Log",
+          "sensitive" : false
+        },
+        "attributes-to-log-regex" : {
+          "displayName" : "Attributes to Log by Regular Expression",
+          "identifiesControllerService" : false,
+          "name" : "attributes-to-log-regex",
+          "sensitive" : false
+        },
+        "Log Payload" : {
+          "displayName" : "Log Payload",
+          "identifiesControllerService" : false,
+          "name" : "Log Payload",
+          "sensitive" : false
+        }
+      },
+      "runDurationMillis" : 0,
+      "schedulingPeriod" : "0 sec",
+      "schedulingStrategy" : "TIMER_DRIVEN",
+      "style" : { },
+      "type" : "org.apache.nifi.processors.standard.LogAttribute",
+      "yieldDuration" : "1 sec"
+    } ],
     "remoteProcessGroups" : [ ],
     "variables" : { }
   }
