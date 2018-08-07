@@ -1,0 +1,25 @@
+{
+  "header" : {
+    "dataModelVersion" : "2"
+  },
+  "content" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ ],
+    "controllerServices" : [ ],
+    "funnels" : [ ],
+    "identifier" : "74bd3dec-e50b-357c-8bc6-476d249024ed",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "name" : "Mongo Stuff",
+    "outputPorts" : [ ],
+    "position" : {
+      "x" : 370.0,
+      "y" : 160.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ ],
+    "remoteProcessGroups" : [ ],
+    "variables" : { }
+  }
+}
